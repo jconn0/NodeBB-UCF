@@ -923,7 +923,7 @@ describe('Controllers', () => {
         });
     });
 
-    it('should load group details page', (done) => {
+    it('should load group details page', () => {
         groups.create({
             name: 'group-details',
             description: 'Foobar!',
@@ -944,7 +944,7 @@ describe('Controllers', () => {
                         assert.equal(res.statusCode, 200);
                         assert(body);
                         assert.equal(body.posts[0].content, 'test topic content');
-                        done();
+                        
                     });
                 });
             });
@@ -960,7 +960,7 @@ describe('Controllers', () => {
         });
     });
 
-    it('should 404 when trying to load group members of hidden group', (done) => {
+    it('should 404 when trying to load group members of hidden group', () => {
         const groups = require('../src/groups');
         groups.create({
             name: 'hidden-group',
@@ -971,7 +971,7 @@ describe('Controllers', () => {
             request(`${nconf.get('url')}/groups/hidden-group/members`, (err, res) => {
                 assert.ifError(err);
                 assert.equal(res.statusCode, 404);
-                done();
+                
             });
         });
     });
@@ -1768,7 +1768,7 @@ describe('Controllers', () => {
             ], done);
         });
 
-        it('should return selected group title', (done) => {
+        it('should return selected group title', () => {
             groups.create({
                 name: 'selectedGroup',
             }, (err) => {
@@ -1782,7 +1782,7 @@ describe('Controllers', () => {
                             assert.equal(res.statusCode, 200);
                             assert(Array.isArray(body.selectedGroup));
                             assert.equal(body.selectedGroup[0].name, 'selectedGroup');
-                            done();
+                            
                         });
                     });
                 });
