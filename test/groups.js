@@ -306,7 +306,6 @@ describe('Groups', () => {
                 db.isSortedSetMember('groups:visible:memberCount', 'visible group', (err, isMember) => {
                     assert.ifError(err);
                     assert(!isMember);
-                    
                 });
             });
         });
@@ -352,14 +351,12 @@ describe('Groups', () => {
         it('should fail if group name is invalid', () => {
             Groups.create({ name: 'not/valid' }, (err) => {
                 assert.equal(err.message, '[[error:invalid-group-name]]');
-                
             });
         });
 
         it('should fail if group name is invalid', () => {
             Groups.create({ name: ['array/'] }, (err) => {
                 assert.equal(err.message, '[[error:invalid-group-name]]');
-                
             });
         });
 
@@ -381,7 +378,6 @@ describe('Groups', () => {
         it('should fail if group name is invalid', () => {
             Groups.create({ name: 'not:valid' }, (err) => {
                 assert.equal(err.message, '[[error:invalid-group-name]]');
-
             });
         });
 
@@ -393,7 +389,6 @@ describe('Groups', () => {
                     Groups.getGroupData('userTitleEnabledGroup', (err, data) => {
                         assert.ifError(err);
                         assert.strictEqual(data.userTitleEnabled, 0);
-                        
                     });
                 });
             });
@@ -427,9 +422,8 @@ describe('Groups', () => {
         it('should change an aspect of a group', () => {
             Groups.update('updateTestGroup', {
                 description: 'baz',
-            }, (err) => {
+            }, () => {
                 // assert.ifError(err);
-
                 Groups.get('updateTestGroup', {}, (err, groupObj) => {
                     assert.ifError(err);
                     // assert.strictEqual('baz', groupObj.description);
@@ -437,18 +431,18 @@ describe('Groups', () => {
             });
         });
 
-        // it('should rename a group and not break navigation routes', async () => {
-        //     await Groups.update('updateTestGroup', {
-        //         name: 'updateTestGroup?',
-        //     });
+        it('should rename a group and not break navigation routes', async () => {
+            await Groups.update('updateTestGroup', {
+                name: 'updateTestGroup?',
+            });
 
-        //     const groupObj = await Groups.get('updateTestGroup?', {});
-        //     assert.strictEqual('updateTestGroup?', groupObj.name);
-        //     assert.strictEqual('updatetestgroup', groupObj.slug);
+            const groupObj = await Groups.get('updateTestGroup?', {});
+            assert.strictEqual('updateTestGroup?', groupObj.name);
+            assert.strictEqual('updatetestgroup', groupObj.slug);
 
-        //     const navItems = await navigation.get();
-        //     assert.strictEqual(navItems[0].route, '&#x2F;categories');
-        // });
+            const navItems = await navigation.get();
+            assert.strictEqual(navItems[0].route, '&#x2F;categories');
+        });
 
         it('should fail if system groups is being renamed', (done) => {
             Groups.update('administrators', {
@@ -533,7 +527,6 @@ describe('Groups', () => {
                     name: 'updateTestGroup?',
                 }, (err) => {
                     assert.equal(err.message, '[[error:group-already-exists]]');
-                    
                 });
             });
         });
@@ -677,7 +670,6 @@ describe('Groups', () => {
                             assert.ifError(err);
                             // hidden groups are not in "groups:visible:memberCount" so they are null
                             assert.deepEqual(memberCounts, [null, 3, null, 1]);
-
                         });
                     });
                 });
