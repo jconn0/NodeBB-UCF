@@ -944,7 +944,6 @@ describe('Controllers', () => {
                         assert.equal(res.statusCode, 200);
                         assert(body);
                         assert.equal(body.posts[0].content, 'test topic content');
-                        
                     });
                 });
             });
@@ -971,7 +970,6 @@ describe('Controllers', () => {
             request(`${nconf.get('url')}/groups/hidden-group/members`, (err, res) => {
                 assert.ifError(err);
                 assert.equal(res.statusCode, 404);
-                
             });
         });
     });
@@ -1782,7 +1780,6 @@ describe('Controllers', () => {
                             assert.equal(res.statusCode, 200);
                             assert(Array.isArray(body.selectedGroup));
                             assert.equal(body.selectedGroup[0].name, 'selectedGroup');
-                            
                         });
                     });
                 });

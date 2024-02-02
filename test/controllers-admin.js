@@ -250,7 +250,6 @@ describe('Admin Controllers', () => {
             assert(body.hasOwnProperty('upgradeCount'));
             assert(body.hasOwnProperty('download'));
             assert(body.hasOwnProperty('incompatible'));
-            
         });
     });
 

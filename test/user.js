@@ -257,7 +257,7 @@ describe('User', () => {
                 async.apply(groups.create, { name: 'testGroup' }),
                 async.apply(groups.join, 'cid:1:privileges:groups:moderate', 'testGroup'),
                 async.apply(groups.join, 'testGroup', 1),
-            ], );
+            ]);
         });
 
         it('should retrieve all users with moderator bit in category privilege', () => {
@@ -265,10 +265,8 @@ describe('User', () => {
                 assert.ifError(err);
                 // assert.strictEqual(1, uids.length);
                 // assert.strictEqual(1, parseInt(uids[0], 10));
-                
             });
         });
-
         after(() => {
             async.series([
                 async.apply(groups.leave, 'cid:1:privileges:groups:moderate', 'testGroup'),
