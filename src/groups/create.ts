@@ -6,43 +6,27 @@ import db = require('../database');
 interface Data {
     name: string;
     slug: string;
-    createtime: number;
+    createtime?: number;
     userTitle: string;
-    userTitleEnabled: string;
+    userTitleEnabled: string | number;
     description: string;
     memberCount: number;
-    hidden: string;
-    system: boolean | string;
-    timestamp: number;
-    private: string;
-    disableJoinRequests: string;
-    disableLeave: string;
-    ownerUid: number;
+    hidden: any;
+    system: any;
+    timestamp?: number;
+    private: any;
+    disableJoinRequests: string | number;
+    disableLeave: any;
+    ownerUid?: number;
 }
-
-interface GroupData {
-    name: string;
-    slug: string;
-    createtime: number;
-    userTitle: string;
-    userTitleEnabled: number;
-    description: string;
-    memberCount: number;
-    hidden: number;
-    system: number;
-    private: number;
-    disableJoinRequests: number;
-    disableLeave: number;
-}
-
 
 interface Group {
     validateGroupName(name: string): void;
-    create(data: Data): Promise<GroupData>;
+    create(data: Data): Promise<any>;
     isSystemGroup(data: Data): boolean;
     isPrivilegeGroup(name: string): boolean;
     systemGroups: string[];
-    getGroupData(name: string): Promise<GroupData>;
+    getGroupData(name: string): Promise<Data>;
 }
 
 module.exports = function (Groups: Group) {
@@ -61,12 +45,12 @@ module.exports = function (Groups: Group) {
     Groups.create = async function (data: Data) {
         const isSystem = isSystemGroup(data);
         const timestamp = data.timestamp || Date.now();
-        let disableJoinRequests = parseInt(data.disableJoinRequests, 10) === 1 ? 1 : 0;
+        let disableJoinRequests = parseInt(data.disableJoinRequests as string, 10) === 1 ? 1 : 0;
         if (data.name === 'administrators') {
             disableJoinRequests = 1;
         }
-        const disableLeave = parseInt(data.disableLeave, 10) === 1 ? 1 : 0;
-        const isHidden = parseInt(data.hidden, 10) === 1;
+        const disableLeave = parseInt(data.disableLeave as string, 10) === 1 ? 1 : 0;
+        const isHidden = parseInt(data.hidden as string, 10) === 1;
 
         Groups.validateGroupName(data.name);
 
@@ -76,13 +60,13 @@ module.exports = function (Groups: Group) {
         }
 
         const memberCount = data.hasOwnProperty('ownerUid') ? 1 : 0;
-        const isPrivate = data.hasOwnProperty('private') && data.private !== undefined ? parseInt(data.private, 10) === 1 : true;
-        let groupData : GroupData = {
+        const isPrivate = data.hasOwnProperty('private') && data.private !== undefined ? parseInt(data.private as string, 10) === 1 : true;
+        let groupData : Data = {
             name: data.name,
             slug: slugify(data.name) as string,
             createtime: timestamp,
             userTitle: data.userTitle || data.name,
-            userTitleEnabled: parseInt(data.userTitleEnabled, 10) === 1 ? 1 : 0,
+            userTitleEnabled: parseInt(data.userTitleEnabled as string, 10) === 1 ? 1 : 0,
             description: data.description || '',
             memberCount: memberCount,
             hidden: isHidden ? 1 : 0,
@@ -93,7 +77,6 @@ module.exports = function (Groups: Group) {
         };
 
         await plugins.hooks.fire('filter:group.create', { group: groupData, data: data });
-
 
         // suppress these because db is imported
         // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call
@@ -125,7 +108,6 @@ module.exports = function (Groups: Group) {
         await plugins.hooks.fire('action:group.create', { group: groupData });
         return groupData;
     };
-
 
     Groups.validateGroupName = function (name) {
         if (!name) {
