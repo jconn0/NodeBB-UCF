@@ -27,7 +27,7 @@ For feature development, we highly recommend you install and use the suggested [
 
 When running in a development environment, you can find the API specs for NodeBB at [http://localhost:4567/debug/spec/read](http://localhost:4567/debug/spec/read) and [http://localhost:4567/debug/spec/write](http://localhost:4567/debug/spec/write).
 
-http://localhost:4567/api
+http://localhost:4567/
 ## TypeScript
 
 curl http://localhost:4567/api/dictionary/hello
