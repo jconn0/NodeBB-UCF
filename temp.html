@@ -1,0 +1,553 @@
+<main id="panel" class="slideout-panel">
+    <nav class="navbar navbar-default navbar-fixed-top header" id="header-menu" component="navbar">
+        <div class="container">
+                        <div class="navbar-header">
+            <button type="button" class="navbar-toggle pull-left" id="mobile-menu">
+                <i class="fa fa-lg fa-fw fa-bars unread-count" data-content="0" data-unread-url="/unread"></i>
+            </button>
+            
+
+            
+
+            
+            
+            <a href="/">
+                <h1 class="navbar-brand forum-title">NodeBB</h1>
+            </a>
+            
+
+            <div component="navbar/title" class="visible-xs hidden">
+                <span></span>
+            </div>
+        </div>
+
+        <div id="nav-dropdown" class="hidden-xs">
+            
+            
+            <ul id="logged-out-menu" class="nav navbar-nav navbar-right">
+                
+                <li>
+                    <a href="/register">
+                        <i class="fa fa-pencil fa-fw hidden-sm hidden-md hidden-lg"></i>
+                        <span>Register</span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="/login">
+                        <i class="fa fa-sign-in fa-fw hidden-sm hidden-md hidden-lg"></i>
+                        <span>Login</span>
+                    </a>
+                </li>
+            </ul>
+            
+            
+
+            <ul class="nav navbar-nav navbar-right hidden-xs">
+                <li>
+                    <a href="#" id="reconnect" class="hide" title="Looks like your connection to NodeBB was lost, please wait while we try to reconnect.">
+                        <i class="fa fa-check"></i>
+                    </a>
+                </li>
+            </ul>
+
+            <ul id="main-nav" class="nav navbar-nav">
+                
+                
+                <li class="">
+                    <a title="Categories" class="navigation-link " href="/categories">
+                        
+                        <i class="fa fa-fw fa-list" data-content=""></i>
+                        
+                        
+                        <span class="visible-xs-inline">Categories</span>
+                        
+                        
+                    </a>
+                    
+                </li>
+                
+                
+                
+                <li class="">
+                    <a title="Recent" class="navigation-link " href="/recent">
+                        
+                        <i class="fa fa-fw fa-clock-o" data-content=""></i>
+                        
+                        
+                        <span class="visible-xs-inline">Recent</span>
+                        
+                        
+                    </a>
+                    
+                </li>
+                
+                
+                
+                <li class="">
+                    <a title="Tags" class="navigation-link " href="/tags">
+                        
+                        <i class="fa fa-fw fa-tags" data-content=""></i>
+                        
+                        
+                        <span class="visible-xs-inline">Tags</span>
+                        
+                        
+                    </a>
+                    
+                </li>
+                
+                
+                
+                <li class="">
+                    <a title="Popular" class="navigation-link " href="/popular">
+                        
+                        <i class="fa fa-fw fa-fire" data-content=""></i>
+                        
+                        
+                        <span class="visible-xs-inline">Popular</span>
+                        
+                        
+                    </a>
+                    
+                </li>
+                
+                
+                
+                <li class="">
+                    <a title="Users" class="navigation-link " href="/users">
+                        
+                        <i class="fa fa-fw fa-user" data-content=""></i>
+                        
+                        
+                        <span class="visible-xs-inline">Users</span>
+                        
+                        
+                    </a>
+                    
+                </li>
+                
+                
+                
+                <li class="">
+                    <a title="Groups" class="navigation-link " href="/groups">
+                        
+                        <i class="fa fa-fw fa-group" data-content=""></i>
+                        
+                        
+                        <span class="visible-xs-inline">Groups</span>
+                        
+                        
+                    </a>
+                    
+                </li>
+                
+                
+                
+                <li class="">
+                    <a title="Career" class="navigation-link " href="/career">
+                        
+                        <i class="fa fa-fw fa-briefcase" data-content=""></i>
+                        
+                        
+                        <span class="visible-xs-inline">Career</span>
+                        
+                        
+                    </a>
+                    
+                </li>
+                
+                
+            </ul>
+
+            
+        </div>
+
+        </div>
+    </nav>
+    <div class="container" id="post-view">
+        <div class="container" id="content">
+        
+        <noscript>
+    <div class="alert alert-danger">
+        <p>
+            Your browser does not seem to support JavaScript. As a result, your viewing experience will be diminished, and you have been placed in <strong>read-only mode</strong>.
+        </p>
+        <p>
+            Please download a browser that supports JavaScript, or enable it if it's disabled (i.e. NoScript).
+        </p>
+    </div>
+    </noscript>
+        
+    <div data-widget-area="header">
+
+    </div>
+    <div class="row">
+    <div class="topic col-lg-12">
+        <div class="topic-header">
+            <h1 component="post/header" class="" itemprop="name">
+                <span class="topic-title">
+                    <span component="topic/labels">
+                        <i component="topic/scheduled" class="fa fa-clock-o hidden" title="Scheduled"></i>
+                        <i component="topic/pinned" class="fa fa-thumb-tack hidden" title="Pinned"></i>
+                        <i component="topic/locked" class="fa fa-lock hidden" title="Locked"></i>
+                        <i class="fa fa-arrow-circle-right hidden" title="Moved"></i>
+                        
+                    </span>
+                    <span component="topic/title">Welcome to your NodeBB!</span>
+                </span>
+            </h1>
+
+            <div class="topic-info clearfix">
+                <div class="category-item inline-block">
+                    <div role="presentation" class="icon pull-left" style="background-color: #59b3d0; color: #ffffff;">
+                        <i class="fa fa-fw fa-comments-o"></i>
+                    </div>
+                    <a href="/category/2/general-discussion">General Discussion</a>
+                </div>
+
+                <div class="tags tag-list inline-block hidden-xs">
+                    
+                </div>
+                <div class="inline-block hidden-xs">
+                    <div class="stats text-muted">
+    <i class="fa fa-fw fa-user" title="Posters"></i>
+    <span title="1" class="human-readable-number">1</span>
+    </div>
+    <div class="stats text-muted">
+    <i class="fa fa-fw fa-pencil" title="Posts"></i>
+    <span component="topic/post-count" title="1" class="human-readable-number">1</span>
+    </div>
+    <div class="stats text-muted">
+    <i class="fa fa-fw fa-eye" title="Views"></i>
+    <span class="human-readable-number" title="2">2</span>
+    </div>
+                </div>
+                
+                <a class="hidden-xs" target="_blank" href="/topic/1.rss"><i class="fa fa-rss-square"></i></a>
+                
+                
+
+                <div class="topic-main-buttons pull-right inline-block">
+    <span class="loading-indicator btn pull-left hidden" done="0" style="display: none;">
+        <span class="hidden-xs">Loading More Posts</span> <i class="fa fa-refresh fa-spin"></i>
+    </span>
+
+
+
+
+
+    <div title="Sort by" class="btn-group bottom-sheet hidden-xs" component="thread/sort">
+    <button class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown" type="button">
+    <span><i class="fa fa-fw fa-sort"></i></span></button>
+    <ul class="dropdown-menu dropdown-menu-right">
+        <li><a href="#" class="oldest_to_newest" data-sort="oldest_to_newest"><i class="fa fa-fw fa-check"></i> Oldest to Newest</a></li>
+        <li><a href="#" class="newest_to_oldest" data-sort="newest_to_oldest"><i class="fa fa-fw"></i> Newest to Oldest</a></li>
+        <li><a href="#" class="most_votes" data-sort="most_votes"><i class="fa fa-fw"></i> Most Votes</a></li>
+    </ul>
+    </div>
+
+
+    <div class="inline-block">
+
+    </div>
+    <div component="topic/reply/container" class="btn-group action-bar bottom-sheet hidden">
+    <a href="/compose?tid=1&amp;title=Welcome to your NodeBB!" class="btn btn-sm btn-primary" component="topic/reply" data-ajaxify="false" role="button"><i class="fa fa-reply visible-xs-inline"></i><span class="visible-sm-inline visible-md-inline visible-lg-inline"> Reply</span></a>
+    <button type="button" class="btn btn-sm btn-primary dropdown-toggle" data-toggle="dropdown">
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu pull-right" role="menu">
+        <li><a href="#" component="topic/reply-as-topic">Reply as topic</a></li>
+    </ul>
+    </div>
+
+
+
+
+    <a component="topic/reply/guest" href="/login" class="btn btn-sm btn-primary">Log in to reply</a>
+
+
+    </div>
+
+            </div>
+        </div>
+        
+
+        
+        <div component="topic/deleted/message" class="alert alert-warning hidden clearfix">
+    <span class="pull-left">This topic has been deleted. Only users with topic management privileges can see it.</span>
+    <span class="pull-right">
+        
+    </span>
+    </div>
+        
+
+        <ul component="topic" class="posts timeline" data-tid="1" data-cid="2">
+            
+                <li component="post" class="  topic-owner-post" data-index="0" data-pid="1" data-uid="1" data-timestamp="1706543254383" data-username="Admin" data-userslug="admin" itemscope="" itemtype="http://schema.org/Comment">
+                    <a component="post/anchor" data-index="0" id="0"></a>
+
+                    <meta itemprop="datePublished" content="2024-01-29T15:47:34.383Z">
+                    <meta itemprop="dateModified" content="">
+
+                    <div class="clearfix post-header">
+    <div class="icon pull-left">
+        <a href="/user/admin">
+            <span class="avatar  avatar-sm2x avatar-rounded" alt="Admin" title="Admin" data-uid="1" loading="lazy" component="user/picture" style="background-color: #607d8b;">A</span>
+            <i component="user/status" class="fa fa-circle status offline" title="Offline"></i>
+        </a>
+    </div>
+
+    <small class="pull-left">
+        <strong>
+            <a href="/user/admin" itemprop="author" data-username="Admin" data-uid="1">Admin</a>
+        </strong>
+
+        
+
+        
+
+        <span class="visible-xs-inline-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+            
+
+            <span>
+                
+            </span>
+        </span>
+
+    </small>
+    <small class="pull-right">
+        <span class="bookmarked"><i class="fa fa-bookmark-o"></i></span>
+    </small>
+    <small class="pull-right">
+        <i component="post/edit-indicator" class="fa fa-pencil-square edit-icon hidden"></i>
+
+        <small data-editor="" component="post/editor" class="hidden">last edited by  <span class="timeago" title=""></span></small>
+
+        <span class="visible-xs-inline-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+            <a class="permalink" href="/post/1"><span class="timeago" title="Jan 29, 2024, 10:47 AM" datetime="2024-01-29T15:47:34.383Z">28 days ago</span></a>
+        </span>
+    </small>
+    </div>
+
+    <br>
+
+    <div class="content" component="post/content" itemprop="text">
+    <h1>Welcome to your brand new NodeBB forum!</h1>
+    <p dir="auto">This is what a topic and post looks like. As an administrator, you can edit the post's title and content.<br>
+    To customise your forum, go to the <a href="../../admin">Administrator Control Panel</a>. You can modify all aspects of your forum there, including installation of third-party plugins.</p>
+    <h2>Additional Resources</h2>
+    <ul>
+    <li><a href="https://docs.nodebb.org" rel="nofollow ugc">NodeBB Documentation</a></li>
+    <li><a href="https://community.nodebb.org" rel="nofollow ugc">Community Support Forum</a></li>
+    <li><a href="https://github.com/nodebb/nodebb" rel="nofollow ugc">Project repository</a></li>
+    </ul>
+
+    </div>
+
+    <script>
+    //     document.addEventListener('DOMContentLoaded', function() {
+        
+    //     const contentArea = document.querySelector('.content[component="post/content"]');
+    //     contentArea && contentArea.addEventListener('mouseup', function(e) {
+    //         const selectedText = window.getSelection().toString().trim();
+    //         if (selectedText) {
+    //             alert(selectedText)
+    //         }
+    //     });
+    // });
+
+    document.body.addEventListener('mouseup', function(e) {
+    const selectedText = window.getSelection().toString().trim();
+    console.log("Selected text:", selectedText);
+    if (selectedText) {
+        fetchDefinition(selectedText);
+    }
+    });
+
+    </script>
+
+    <div class="post-footer">
+
+
+    <div class="clearfix">
+
+    <a component="post/reply-count" data-target-component="post/replies/container" href="#" class="threaded-replies no-select pull-left hidden">
+        <span component="post/reply-count/avatars" class="avatars ">
+            
+        </span>
+
+        <span class="replies-count" component="post/reply-count/text" data-replies="0">1 Reply</span>
+        <span class="replies-last hidden-xs">Last reply <span class="timeago" title=""></span></span>
+
+        <i class="fa fa-fw fa-chevron-right" component="post/replies/open"></i>
+        <i class="fa fa-fw fa-chevron-down hidden" component="post/replies/close"></i>
+        <i class="fa fa-fw fa-spin fa-spinner hidden" component="post/replies/loading"></i>
+    </a>
+
+
+    <small class="pull-right">
+        <!-- This partial intentionally left blank; overwritten by nodebb-plugin-reactions -->
+        <span class="post-tools">
+            <a component="post/reply" href="#" class="no-select hidden">Reply</a>
+            <a component="post/quote" href="#" class="no-select hidden">Quote</a>
+        </span>
+
+        
+        <span class="votes">
+            <a component="post/upvote" href="#" class="">
+                <i class="fa fa-chevron-up"></i>
+            </a>
+
+            <span component="post/vote-count" data-votes="0">0</span>
+
+            
+            <a component="post/downvote" href="#" class="">
+                <i class="fa fa-chevron-down"></i>
+            </a>
+            
+        </span>
+        
+
+        <span component="post/tools" class="dropdown moderator-tools bottom-sheet hidden">
+    <a href="#" data-toggle="dropdown" data-ajaxify="false"><i class="fa fa-fw fa-ellipsis-v"></i></a>
+    <ul class="dropdown-menu dropdown-menu-right hidden" role="menu"></ul>
+    </span>
+
+    </small>
+    </div>
+    <div component="post/replies/container"></div>
+    </div>
+                </li>
+                
+            
+        </ul>
+
+        
+
+        
+
+        
+
+        <div class="pagination-block text-center ready">
+    <div class="progress-bar" style="width: 0%;"></div>
+    <div class="wrapper dropup">
+        <i class="fa fa-2x fa-angle-double-up pointer fa-fw pagetop"></i>
+
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <span class="pagination-text">1 out of 1</span>
+        </a>
+
+        <i class="fa fa-2x fa-angle-double-down pointer fa-fw pagebottom"></i>
+        <ul class="dropdown-menu dropdown-menu-right" role="menu">
+            <li>
+                <div class="row">
+                    <div class="col-xs-8 post-content"></div>
+                    <div class="col-xs-4 text-right">
+                        <div class="scroller-content">
+                            <span class="pointer pagetop">First post <i class="fa fa-angle-double-up"></i></span>
+                            <div class="scroller-container">
+                                <div class="scroller-thumb">
+                                    <span class="thumb-text"></span>
+                                    <div class="scroller-thumb-icon"></div>
+                                </div>
+                            </div>
+                            <span class="pointer pagebottom">Last post <i class="fa fa-angle-double-down"></i></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-6">
+                        <button id="myNextPostBtn" class="btn btn-default form-control" disabled="">Go to my next post</button>
+                    </div>
+                    <div class="col-xs-6">
+                        <input type="number" class="form-control" id="indexInput" placeholder="Go to post index">
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    </div>
+
+    </div>
+    <div data-widget-area="sidebar" class="col-lg-3 col-sm-12 hidden">
+        
+    </div>
+    </div>
+
+    <div data-widget-area="footer">
+
+    <footer id="footer" class="container footer">
+    <div>
+        Powered by <a target="_blank" href="https://nodebb.org">NodeBB</a> | <a target="_blank" href="//github.com/NodeBB/NodeBB/graphs/contributors">Contributors</a>
+    </div>
+    </footer>
+
+    </div>
+
+
+    <noscript>
+    <div component="pagination" class="text-center pagination-container hidden">
+    <ul class="pagination hidden-xs">
+        <li class="previous pull-left disabled">
+            <a href="?" data-page="1"><i class="fa fa-chevron-left"></i> </a>
+        </li>
+
+        
+
+        <li class="next pull-right disabled">
+            <a href="?" data-page="1"> <i class="fa fa-chevron-right"></i></a>
+        </li>
+    </ul>
+
+    <ul class="pagination hidden-sm hidden-md hidden-lg">
+        <li class="first disabled">
+            <a href="?" data-page="1"><i class="fa fa-fast-backward"></i> </a>
+        </li>
+
+        <li class="previous disabled">
+            <a href="?" data-page="1"><i class="fa fa-chevron-left"></i> </a>
+        </li>
+
+        <li component="pagination/select-page" class="page select-page">
+            <a href="#">1 / 1</a>
+        </li>
+
+        <li class="next disabled">
+            <a href="?" data-page="1"> <i class="fa fa-chevron-right"></i></a>
+        </li>
+
+        <li class="last disabled">
+            <a href="?" data-page="1"><i class="fa fa-fast-forward"></i> </a>
+        </li>
+    </ul>
+    </div>
+    </noscript>
+
+        </div><!-- /.container#content -->
+        <div class="container">
+            <h2>Dictionary</h2>
+            <h3>test <i class="fa fa-play-circle fa-xs" aria-hidden="true" id="play-pronounce"></i><h4 class="partOfSpeech">noun</h4></h3>
+            <li>A challenge, trial.</li>
+            <li>A cupel or cupelling hearth in which precious metals are melted for trial and refinement.</li>
+            <b>Synonyms</b>: examination, quiz
+            <h4 class="partOfSpeech">verb</h4>
+            <li>To challenge.</li>
+            <li>Climbing the mountain tested our stamina.</li>
+        </div>
+    </div>
+    <style>
+        .partOfSpeech {
+            color: #705f53;
+        }
+
+        #post-view {
+            display: flex;
+            flex-direction: row;
+        }
+
+        #content {
+            max-width: 75%;
+        }
+    </style>
+</main>

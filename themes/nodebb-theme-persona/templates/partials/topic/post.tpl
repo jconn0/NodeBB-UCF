@@ -53,6 +53,43 @@
     {posts.content}
 </div>
 
+<script>
+
+document.body.addEventListener('mouseup', function(e) {
+    const selectedText = window.getSelection().toString().trim();
+    console.log("Selected text:", selectedText);
+    if (selectedText) {
+        const response = fetchDefinition(selectedText);
+        displayDefinition(response);
+    }
+});
+
+function fetchDefinition(word) {
+    const url = `http://localhost:4567/api/dictionary/${word}`;
+
+    fetch(url)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log("Definition:", data);
+        })
+        .catch(error => {
+            console.error("Error fetching definition:", error);
+        });
+}
+
+function displayDefinition(response) {
+    
+}
+
+
+
+</script>
+
 <div class="post-footer">
     {{{ if posts.user.signature }}}
     <div component="post/signature" data-uid="{posts.user.uid}" class="post-signature">{posts.user.signature}</div>

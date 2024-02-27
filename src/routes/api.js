@@ -34,6 +34,9 @@ module.exports = function (app, middleware, controllers) {
     router.get('/topic/teaser/:topic_id', [...middlewares], helpers.tryRoute(controllers.topics.teaser));
     router.get('/topic/pagination/:topic_id', [...middlewares], helpers.tryRoute(controllers.topics.pagination));
 
+    // Add route for dictionary API call
+    router.get('/dictionary/:word', [...middlewares], helpers.tryRoute(controllers.api.getDictionaryDefinition));
+
     const multipart = require('connect-multiparty');
     const multipartMiddleware = multipart();
     const postMiddlewares = [
