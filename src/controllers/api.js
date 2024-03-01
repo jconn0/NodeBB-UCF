@@ -19,8 +19,6 @@ const socketioTransports = nconf.get('socket.io:transports') || ['polling', 'web
 const socketioOrigins = nconf.get('socket.io:origins');
 const websocketAddress = nconf.get('socket.io:address') || '';
 
-const https = require('https'); // may or not need
-
 apiController.loadConfig = async function (req) {
     const config = {
         relative_path,
@@ -128,26 +126,6 @@ apiController.getConfig = async function (req, res) {
 apiController.getModerators = async function (req, res) {
     const moderators = await categories.getModerators(req.params.cid);
     res.json({ moderators: moderators });
-};
-
-// Call to dictionary API
-apiController.getDictionaryDefinition = async function (req, res) {
-    const word = req.params.word;
-    const url = `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`;
-
-    https.get(url, (response) => {
-        let data = '';
-
-        response.on('data', (chunk) => {
-            data += chunk;
-        });
-
-        response.on('end', () => {
-            res.json(JSON.parse(data));
-        });
-    }).on('error', (error) => {
-        res.status(500).json({ error: "Failed to fetch definition" });
-    });
 };
 
 require('../promisify')(apiController, ['getConfig', 'getObject', 'getModerators']);

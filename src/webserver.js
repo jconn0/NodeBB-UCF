@@ -35,6 +35,7 @@ const topicEvents = require('./topics/events');
 const privileges = require('./privileges');
 const routes = require('./routes');
 const auth = require('./routes/authentication');
+const dictionaryRoute = require('./routes/dictionary');
 
 const helpers = require('./helpers');
 
@@ -157,6 +158,8 @@ function setupExpressApp(app) {
     app.use(`${relativePath}/apple-touch-icon`, middleware.routeTouchIcon);
 
     configureBodyParser(app);
+
+    app.use(dictionaryRoute); // add new route for dictionary
 
     app.use(cookieParser(nconf.get('secret')));
     app.use(useragent.express());

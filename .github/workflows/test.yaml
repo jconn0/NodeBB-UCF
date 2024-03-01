@@ -25,16 +25,12 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-latest]
-        node: [16, 18]
+        node: [18]
         database: [mongo-dev, mongo, redis, postgres]
         include:
-          # only run coverage once
-          - os: ubuntu-latest
-            node: 16
-            coverage: true
-          # test under development once
-          - database: mongo-dev
-            test_env: development
+            # test under development once
+            - database: mongo-dev
+              test_env: development
     runs-on: ${{ matrix.os }}
     env:
       TEST_ENV: ${{ matrix.test_env || 'production' }}
@@ -187,15 +183,3 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           flag-name: ${{ matrix.os }}-node-${{ matrix.node }}-db-${{ matrix.database }}
           parallel: true
-
-  finish:
-    permissions:
-      checks: write  # for coverallsapp/github-action to create new checks
-    needs: test
-    runs-on: ubuntu-latest
-    steps:
-      - name: Coveralls Finished
-        uses: coverallsapp/github-action@1.1.3
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          parallel-finished: true

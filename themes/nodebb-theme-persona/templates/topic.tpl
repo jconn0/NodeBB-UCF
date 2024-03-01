@@ -97,15 +97,12 @@
         {{widgets.sidebar.html}}
         {{{end}}}
     </div>
+    <!-- new div for dictionary -->
     <div class="container" id="dictionary" style="width: 25%; display: none;">
         <h2 style="display: flex; justify-content: space-between;">Dictionary  <span id="close-btn" style="cursor: pointer;" onclick="hideDefinition()"><i class="fa fa-times fa-xs" aria-hidden="true"></i></span></h2>
-        <h3><span id="word-header"></span><i class="fa fa-play-circle fa-xs" aria-hidden="true" id="play-pronounce" style="cursor: pointer; margin-left: 10px;"></i><h4 class="partOfSpeech">noun</h4></h3>
-        <li>A challenge, trial.</li>
-        <li>A cupel or cupelling hearth in which precious metals are melted for trial and refinement.</li>
-        <b>Synonyms</b>: examination, quiz
-        <h4 class="partOfSpeech">verb</h4>
-        <li>To challenge.</li>
-        <li>Climbing the mountain tested our stamina.</li>
+        <h3><span id="word-header"></span><i class="fa fa-play-circle fa-xs" aria-hidden="true" id="play-pronounce" style="cursor: pointer; margin-left: 10px;"></i><h4 class="partOfSpeech"></h4></h3>
+        <span id="meanings">
+        </span>
     </div>
 </div>
 
